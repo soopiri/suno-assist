@@ -7,7 +7,7 @@
   "frontend:dev:watcher": "pnpm run dev",
   "frontend:dev:serverUrl": "auto",
   "author": {
-    "name": "SooyoonJi",
-    "email": "sooyoon.ji@vuno.co"
+    "name": "soopiri",
+    "email": "sooyoon@kakao.com"
   }
 }
