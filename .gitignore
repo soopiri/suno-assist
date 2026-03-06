@@ -1,0 +1,13 @@
+build/bin
+node_modules
+frontend/dist
+frontend/package.json.md5
+
+# License keys (sensitive)
+license_private.pem
+license_public.pem
+license-gen
+
+# OS generated
+.DS_Store
+Thumbs.db
