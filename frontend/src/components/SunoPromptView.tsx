@@ -8,10 +8,7 @@ interface Props {
   loading: boolean;
   onGenerate: () => void;
   onReset: () => void;
-  onPromptChange: (
-    field: "stylePrompt" | "lyricsPrompt",
-    value: string,
-  ) => void;
+  onPromptChange: (field: "stylePrompt", value: string) => void;
   canGenerate: boolean;
 }
 
@@ -52,7 +49,7 @@ export default function SunoPromptView({
         </div>
       </div>
 
-      <div className="flex-1 overflow-y-auto">
+      <div className="flex-1 min-h-0 flex flex-col">
         {loading ? (
           <div className="flex items-center justify-center h-full">
             <Spinner text="Suno 프롬프트 생성 중..." />
@@ -62,34 +59,16 @@ export default function SunoPromptView({
             곡을 선택하고 가사를 먼저 생성해주세요
           </div>
         ) : (
-          <div className="space-y-3">
-            <div>
-              <div className="flex items-center justify-between mb-1.5">
-                <span className="text-xs text-text-muted">Style of Music</span>
-                <CopyButton text={prompt.stylePrompt} label="복사" />
-              </div>
-              <textarea
-                value={prompt.stylePrompt}
-                onChange={(e) => onPromptChange("stylePrompt", e.target.value)}
-                rows={3}
-                className="w-full rounded-lg bg-bg-tertiary border border-border p-3 text-sm text-text-primary leading-relaxed resize-none outline-none focus:border-border-focus transition-colors"
-              />
+          <div className="h-full flex flex-col">
+            <div className="flex items-center justify-between mb-1.5">
+              <span className="text-xs text-text-muted">Style of Music</span>
+              <CopyButton text={prompt.stylePrompt} label="복사" />
             </div>
-
-            <div>
-              <div className="flex items-center justify-between mb-1.5">
-                <span className="text-xs text-text-muted">
-                  Lyrics 메타태그 - 필요시 가사 맨 위에 붙여넣기
-                </span>
-                <CopyButton text={prompt.lyricsPrompt || ""} label="복사" />
-              </div>
-              <textarea
-                value={prompt.lyricsPrompt || ""}
-                onChange={(e) => onPromptChange("lyricsPrompt", e.target.value)}
-                rows={2}
-                className="w-full rounded-lg bg-bg-tertiary border border-border p-3 text-sm text-text-primary leading-relaxed resize-none outline-none focus:border-border-focus transition-colors"
-              />
-            </div>
+            <textarea
+              value={prompt.stylePrompt}
+              onChange={(e) => onPromptChange("stylePrompt", e.target.value)}
+              className="flex-1 w-full rounded-lg bg-bg-tertiary border border-border p-3 text-sm text-text-primary leading-relaxed resize-none outline-none focus:border-border-focus transition-colors"
+            />
           </div>
         )}
       </div>

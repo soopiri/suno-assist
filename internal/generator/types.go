@@ -38,10 +38,9 @@ type LyricsResult struct {
 }
 
 type SunoPromptResult struct {
-	TrackNumber  int    `json:"trackNumber"`
-	TrackTitle   string `json:"trackTitle"`
-	StylePrompt  string `json:"stylePrompt"`
-	LyricsPrompt string `json:"lyricsPrompt"`
+	TrackNumber int    `json:"trackNumber"`
+	TrackTitle  string `json:"trackTitle"`
+	StylePrompt string `json:"stylePrompt"`
 }
 
 type ImagePromptResult struct {

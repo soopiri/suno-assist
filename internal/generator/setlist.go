@@ -18,11 +18,11 @@ Rules:
 - Avoid making track titles overly literal, overly poetic, gimmicky, or based on tiny actions
 - Avoid titles that sound like object labels, sound-effect cues, diary headings, or overly templated concept titles
 - Track titles should feel plausible, concise, and musically usable
-- Let tracks suggest moments, shifts in distance, changes in light, fragments of conversation, positions, weather, tension, release, or perspective in the scene
+- Let tracks suggest moments, locations, shifts in mood, distance, light, weather, atmosphere, or perspective
 - Do not assign one prop, one sound effect, or one tiny practical action as the entire identity of a track
 - Genres should be specific enough to guide broad musical direction, but should not read like detailed production briefs
 - Vibes should use concise visual, spatial, situational, or sensory language rather than generic emotional adjectives
-- Notes should briefly describe the track's role through pacing, perspective, atmosphere, movement, tension, or release
+- Notes should briefly describe the track's role through pacing, atmosphere, movement, contrast, perspective, or emotional weight
 - Notes should not read like object lists, Foley notes, gear notes, or production breakdowns
 - The sequence should feel coherent in pacing and perspective, but not mechanically structured
 - The setlist should feel contemporary, specific, and believable rather than generic, formulaic, or overly templated
@@ -64,7 +64,7 @@ Requirements:
 - Give each track a distinct role, but do not reduce each track to one prop, one sound effect, or one tiny practical action
 - The genre and vibe of each track should stay connected to the album concept while allowing subtle variation
 - Keep genre and vibe useful for later music generation, but do not overload them with detailed arrangement or sound-design language
-- Notes should describe each track's function in terms of pacing, perspective, atmosphere, movement, tension, or release
+- Notes should describe each track's function in terms of pacing, atmosphere, movement, contrast, perspective, or emotional weight
 - Do not write notes like field-recording instructions, gear notes, or production memos
 - Avoid over-explaining the story of the album
 

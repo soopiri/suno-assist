@@ -235,7 +235,7 @@ function App() {
   );
 
   const handleSunoPromptChange = useCallback(
-    (field: "stylePrompt" | "lyricsPrompt", value: string) => {
+    (field: "stylePrompt", value: string) => {
       if (selectedTrack === null) return;
       setSunoPrompts((prev) => {
         const existing = prev.get(selectedTrack);

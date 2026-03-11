@@ -39,7 +39,6 @@ export interface SunoPromptResult {
   trackNumber: number;
   trackTitle: string;
   stylePrompt: string;
-  lyricsPrompt: string;
 }
 
 export interface ImagePromptResult {

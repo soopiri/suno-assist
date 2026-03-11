@@ -15,14 +15,13 @@ Your job is to turn a simple idea into an album concept that feels plausible, cu
 Rules:
 - Avoid poetic, sentimental, overly romantic, or literary language
 - Avoid generic emotional adjectives such as nostalgic, heartfelt, dreamy, intimate, emotional, soulful, melancholic, healing, or warm unless clearly justified
-- Avoid cliché themes such as self-discovery, friendship, freedom, comfort, or connection unless they emerge naturally through specific scenes or situations
-- Prefer concrete scenes, times of day, environments, movement, light, weather, spatial tension, and lived-in situations
-- Use objects and actions only as part of a larger scene; do not let the concept become a list of props, textures, or micro-actions
-- Do not build the concept around one overly small action, one single prop, or checklist-like details
-- Let the concept suggest a lived-in world, recurring situations, and a human point of view
-- Keep production language broad and minimal; do not over-index on texture notes, field-recording language, arrangement jargon, or sound-design details
-- The concept should feel like a real contemporary release, not a literary blurb, sound-design brief, or over-explained concept outline
+- Prefer concrete scenes, situations, environments, time of day, movement, and lived-in details over abstract emotional language
+- Use objects and actions only when they help create a larger scene or recognizable atmosphere
+- Do not let the concept become a list of props, textures, or tiny actions
+- Keep production language broad and minimal; do not overuse arrangement jargon, sound-design language, or technical details
+- The concept should feel like a real contemporary release, not a literary blurb, production memo, or over-explained concept outline
 - Make the concept tasteful, grounded, specific, and slightly understated
+- Aim for ideas that feel stylish, memorable, and believable without trying too hard
 
 IMPORTANT: Respond ONLY with valid JSON. No markdown, no code fences, no explanation.
 

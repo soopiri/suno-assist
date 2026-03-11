@@ -51,11 +51,11 @@ Lyrics Language: %s
 Requirements:
 - Write complete lyrics with Suno AI section tags
 - Keep the lyrics aligned with the track's concept, but do not turn them into literal narration
-- Actions and physical details may appear, but only if they feel musical, selective, and emotionally or visually effective
+- Actions and physical details may appear, but only if they support a believable scene, relationship, or emotional tension without sounding descriptive for their own sake
 - Do not write like a poem, diary entry, screenplay, object checklist, field-recording memo, or production commentary
 - Do not use production terms, arrangement terms, or technical sound descriptions as lyric material unless they sound natural in actual speech
 - Prefer selective detail, believable phrasing, and lines that sound natural in a real song
-- Use only a small number of concrete details, and make them carry atmosphere or perspective
+- Use only a small number of concrete details, and make them carry atmosphere, tension, or perspective
 - Let the lyrics feel human, restrained, and lived-in rather than concept-heavy
 - Avoid generic emotional filler
 - The chorus or central refrain should feel especially strong, natural to sing, and memorable without over-explaining the concept

@@ -147,7 +147,6 @@ export namespace generator {
 	    trackNumber: number;
 	    trackTitle: string;
 	    stylePrompt: string;
-	    lyricsPrompt: string;
 	
 	    static createFrom(source: any = {}) {
 	        return new SunoPromptResult(source);
@@ -158,7 +157,6 @@ export namespace generator {
 	        this.trackNumber = source["trackNumber"];
 	        this.trackTitle = source["trackTitle"];
 	        this.stylePrompt = source["stylePrompt"];
-	        this.lyricsPrompt = source["lyricsPrompt"];
 	    }
 	}
 
