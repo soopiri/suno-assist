@@ -21,7 +21,7 @@ Guidelines:
 - Use square album cover composition with strong graphic layout
 - Include lighting, color palette, and texture direction
 - Avoid text in the image description (album title will be added separately)
-- Draw inspiration from modern album artwork, fashion editorials, indie graphic design, and contemporary photography.
+- Draw inspiration from modern album artwork, fashion editorials and contemporary photography.
 - Avoid overly complex scenes with many elements. Prefer simple, bold compositions.
 - Think like a contemporary album art director rather than an illustrator.
 - Avoid combining too many metaphors or symbolic elements in one image.

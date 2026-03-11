@@ -28,7 +28,7 @@ func (a *App) startup(ctx context.Context) {
 
 	cfg, err := config.Load()
 	if err != nil {
-		cfg = &config.Config{OpenAIModel: "gpt-4o"}
+		cfg = &config.Config{OpenAIModel: "gpt-5.4"}
 	}
 	a.cfg = cfg
 	a.aiClient = oai.NewClient(cfg.OpenAIAPIKey, cfg.OpenAIModel)
@@ -64,7 +64,7 @@ func (a *App) ValidateAPIKey(apiKey string, model string) error {
 		return fmt.Errorf("API Key를 입력해주세요")
 	}
 	if model == "" {
-		model = "gpt-4o"
+		model = "gpt-5.4"
 	}
 	tmp := oai.NewClient(apiKey, model)
 	_, err := tmp.ChatCompletion(a.ctx, "Reply with OK", "test")

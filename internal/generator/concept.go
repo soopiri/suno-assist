@@ -10,15 +10,18 @@ import (
 
 const conceptSystemPrompt = `You are a music creative director developing modern, tasteful, concept-driven album ideas.
 
-Your job is to turn a simple idea into an album concept that feels plausible, current, and visually/sound-wise specific.
+Your job is to turn a simple idea into an album concept that feels plausible, current, restrained, and musically alive.
 
 Rules:
-- Avoid poetic, sentimental, or overly romantic language
-- Avoid generic emotional adjectives such as nostalgic, heartfelt, dreamy, intimate, emotional, soulful, or melancholic unless clearly justified
-- Avoid cliché themes such as self-discovery, friendship, healing, freedom, or connection to nature unless expressed through concrete situations
-- Prefer specific settings, objects, textures, time of day, environmental details, and sonic cues
-- Think like a contemporary streaming-era release, not a literary album blurb
-- Make the concept feel tasteful, restrained, and real
+- Avoid poetic, sentimental, overly romantic, or literary language
+- Avoid generic emotional adjectives such as nostalgic, heartfelt, dreamy, intimate, emotional, soulful, melancholic, healing, or warm unless clearly justified
+- Avoid cliché themes such as self-discovery, friendship, freedom, comfort, or connection to nature unless they emerge naturally through specific scenes
+- Prefer concrete scenes, times of day, environments, light, weather, movement, and sonic atmosphere
+- Use objects and actions only as part of a larger scene; do not let the concept become a list of props, textures, or micro-actions
+- Do not build the concept around one overly small action, one single prop, or checklist-like camping details
+- Let the concept suggest a lived-in world, recurring situations, and a human point of view
+- The concept should feel like a real contemporary release, not a literary blurb or a production breakdown
+- Make the concept tasteful, grounded, and slightly understated
 
 IMPORTANT: Respond ONLY with valid JSON. No markdown, no code fences, no explanation.
 
@@ -37,16 +40,20 @@ Idea: %s
 Number of Tracks: %d
 Lyrics Language: %s
 
-Create a cohesive album concept that feels modern, restrained, and specific.
+Create a cohesive album concept that feels modern, restrained, stylish, and believable as a real release.
 
 Requirements:
-- The title should be short, modern, and plausible as a real release title
+- The title should be short, distinctive, and plausible as a real streaming-era release title
 - Avoid overly poetic title words unless clearly necessary
+- Avoid titles that are just object names, action labels, or stock cliches
 - The genre should be specific enough to guide production
-- The vibe should use concrete sensory, visual, or sonic cues rather than emotional adjectives
-- The description should explain the setting, recurring imagery, and musical direction of the album
-- Prefer scenes, objects, textures, weather, lighting, or environments over abstract feelings
-- Avoid writing this like a sentimental album synopsis
+- The vibe should use concrete sensory, visual, spatial, or sonic cues rather than emotional adjectives
+- The description should explain the album's setting, recurring situations, atmosphere, and musical direction
+- Prefer scenes, time flow, human presence, movement, and environment over abstract feelings
+- Use physical details only when they help create a larger scene or perspective
+- Do not make the concept revolve around tiny practical actions or a checklist of camping objects
+- Do not write this like a sentimental album synopsis or a production memo
+- Aim for something grounded, contemporary, and musically usable
 
 IMPORTANT: Write ALL response fields (title, genre, vibe, description) in the same language as the Lyrics Language specified above.`,
 		input.Idea, input.TrackCount, input.Language)

@@ -31,7 +31,7 @@ func Load() (*Config, error) {
 	data, err := os.ReadFile(p)
 	if err != nil {
 		if os.IsNotExist(err) {
-			return &Config{OpenAIModel: "gpt-4o"}, nil
+			return &Config{OpenAIModel: "gpt-5.4"}, nil
 		}
 		return nil, err
 	}
@@ -41,7 +41,7 @@ func Load() (*Config, error) {
 		return nil, err
 	}
 	if cfg.OpenAIModel == "" {
-		cfg.OpenAIModel = "gpt-4o"
+		cfg.OpenAIModel = "gpt-5.4"
 	}
 	return &cfg, nil
 }

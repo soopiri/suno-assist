@@ -1,5 +1,11 @@
 import { useState, useEffect } from "react";
-import { GetConfig, SaveConfig, GetHWID, ActivateLicense, ValidateAPIKey } from "../../wailsjs/go/main/App";
+import {
+  GetConfig,
+  SaveConfig,
+  GetHWID,
+  ActivateLicense,
+  ValidateAPIKey,
+} from "../../wailsjs/go/main/App";
 import type { license } from "../../wailsjs/go/models";
 
 interface Props {
@@ -8,9 +14,13 @@ interface Props {
   onLicenseActivated?: (status: license.AppStatus) => void;
 }
 
-export default function ConfigModal({ open, onClose, onLicenseActivated }: Props) {
+export default function ConfigModal({
+  open,
+  onClose,
+  onLicenseActivated,
+}: Props) {
   const [apiKey, setApiKey] = useState("");
-  const [model, setModel] = useState("gpt-4o");
+  const [model, setModel] = useState("gpt-5.4");
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
   const [hwid, setHwid] = useState("");
@@ -21,7 +31,10 @@ export default function ConfigModal({ open, onClose, onLicenseActivated }: Props
   const [activating, setActivating] = useState(false);
   const [apiChecked, setApiChecked] = useState(false);
   const [apiChecking, setApiChecking] = useState(false);
-  const [apiCheckMsg, setApiCheckMsg] = useState<{ ok: boolean; text: string } | null>(null);
+  const [apiCheckMsg, setApiCheckMsg] = useState<{
+    ok: boolean;
+    text: string;
+  } | null>(null);
   const [originalKey, setOriginalKey] = useState("");
 
   useEffect(() => {
@@ -30,12 +43,14 @@ export default function ConfigModal({ open, onClose, onLicenseActivated }: Props
         const key = cfg.openai_api_key || "";
         setApiKey(key);
         setOriginalKey(key);
-        setModel(cfg.openai_model || "gpt-4o");
+        setModel(cfg.openai_model || "gpt-5.4");
         setApiChecked(!!key);
         setApiCheckMsg(null);
         setError("");
       });
-      GetHWID().then(setHwid).catch(() => {});
+      GetHWID()
+        .then(setHwid)
+        .catch(() => {});
     }
   }, [open]);
 
@@ -62,7 +77,10 @@ export default function ConfigModal({ open, onClose, onLicenseActivated }: Props
       setApiCheckMsg({ ok: true, text: "API Key 확인 완료" });
     } catch (e: any) {
       setApiChecked(false);
-      setApiCheckMsg({ ok: false, text: e?.message || "API Key가 유효하지 않습니다" });
+      setApiCheckMsg({
+        ok: false,
+        text: e?.message || "API Key가 유효하지 않습니다",
+      });
     } finally {
       setApiChecking(false);
     }
@@ -81,7 +99,9 @@ export default function ConfigModal({ open, onClose, onLicenseActivated }: Props
     setActivating(true);
     try {
       const result = await ActivateLicense(licenseKey.trim());
-      setLicenseSuccess(`라이센스 활성화 완료 (만료: ${result.license?.expiresAt})`);
+      setLicenseSuccess(
+        `라이센스 활성화 완료 (만료: ${result.license?.expiresAt})`,
+      );
       setLicenseKey("");
       onLicenseActivated?.(result);
     } catch (e: any) {
@@ -117,9 +137,7 @@ export default function ConfigModal({ open, onClose, onLicenseActivated }: Props
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
       <div className="w-full max-w-md rounded-2xl bg-bg-secondary border border-border p-6 shadow-2xl">
-        <h2 className="text-lg font-semibold text-text-primary mb-4">
-          설정
-        </h2>
+        <h2 className="text-lg font-semibold text-text-primary mb-4">설정</h2>
 
         <div className="space-y-4">
           <div>
@@ -148,7 +166,9 @@ export default function ConfigModal({ open, onClose, onLicenseActivated }: Props
               </button>
             </div>
             {apiCheckMsg && (
-              <p className={`text-[11px] mt-1 ${apiCheckMsg.ok ? "text-success" : "text-error"}`}>
+              <p
+                className={`text-[11px] mt-1 ${apiCheckMsg.ok ? "text-success" : "text-error"}`}
+              >
                 {apiCheckMsg.text}
               </p>
             )}
@@ -163,9 +183,10 @@ export default function ConfigModal({ open, onClose, onLicenseActivated }: Props
               onChange={(e) => setModel(e.target.value)}
               className="w-full rounded-lg bg-bg-tertiary border border-border px-3 py-2 text-sm text-text-primary focus:border-border-focus focus:outline-none transition-colors"
             >
+              <option value="gpt-5.4">GPT-5.4</option>
+              <option value="gpt-5-mini">GPT-5 Mini</option>
               <option value="gpt-4o">GPT-4o</option>
               <option value="gpt-4o-mini">GPT-4o Mini</option>
-              <option value="gpt-4-turbo">GPT-4 Turbo</option>
             </select>
           </div>
 
@@ -222,9 +243,7 @@ export default function ConfigModal({ open, onClose, onLicenseActivated }: Props
             )}
           </div>
 
-          {error && (
-            <p className="text-sm text-error">{error}</p>
-          )}
+          {error && <p className="text-sm text-error">{error}</p>}
         </div>
 
         <div className="flex justify-end gap-3 mt-6">

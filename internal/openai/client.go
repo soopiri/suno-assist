@@ -3,6 +3,7 @@ package openai
 import (
 	"context"
 	"fmt"
+	"strings"
 
 	goopenai "github.com/sashabaranov/go-openai"
 )
@@ -14,7 +15,7 @@ type Client struct {
 
 func NewClient(apiKey, model string) *Client {
 	if model == "" {
-		model = "gpt-4o"
+		model = "gpt-5.4"
 	}
 	return &Client{apiKey: apiKey, model: model}
 }
@@ -33,14 +34,18 @@ func (c *Client) ChatCompletion(ctx context.Context, systemPrompt, userPrompt st
 
 	client := goopenai.NewClient(c.apiKey)
 
-	resp, err := client.CreateChatCompletion(ctx, goopenai.ChatCompletionRequest{
+	req := goopenai.ChatCompletionRequest{
 		Model: c.model,
 		Messages: []goopenai.ChatCompletionMessage{
 			{Role: goopenai.ChatMessageRoleSystem, Content: systemPrompt},
 			{Role: goopenai.ChatMessageRoleUser, Content: userPrompt},
 		},
-		Temperature: 0.8,
-	})
+	}
+	if !strings.HasPrefix(c.model, "gpt-5") {
+		req.Temperature = 0.8
+	}
+
+	resp, err := client.CreateChatCompletion(ctx, req)
 	if err != nil {
 		return "", fmt.Errorf("OpenAI API error: %w", err)
 	}
