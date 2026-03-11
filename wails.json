@@ -9,5 +9,12 @@
   "author": {
     "name": "soopiri",
     "email": "sooyoon@kakao.com"
+  },
+  "info": {
+    "companyName": "soopiri",
+    "productName": "Suno Assist",
+    "productVersion": "0.1.0",
+    "copyright": "Copyright 2025 soopiri",
+    "comments": "AI-powered album production workflow tool for Suno"
   }
 }
