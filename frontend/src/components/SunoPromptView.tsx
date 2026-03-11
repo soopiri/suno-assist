@@ -8,7 +8,10 @@ interface Props {
   loading: boolean;
   onGenerate: () => void;
   onReset: () => void;
-  onPromptChange: (field: "stylePrompt" | "lyricsPrompt", value: string) => void;
+  onPromptChange: (
+    field: "stylePrompt" | "lyricsPrompt",
+    value: string,
+  ) => void;
   canGenerate: boolean;
 }
 
@@ -75,7 +78,9 @@ export default function SunoPromptView({
 
             <div>
               <div className="flex items-center justify-between mb-1.5">
-                <span className="text-xs text-text-muted">Lyrics 메타태그</span>
+                <span className="text-xs text-text-muted">
+                  Lyrics 메타태그 - 필요시 가사 맨 위에 붙여넣기
+                </span>
                 <CopyButton text={prompt.lyricsPrompt || ""} label="복사" />
               </div>
               <textarea
