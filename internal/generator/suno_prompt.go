@@ -12,6 +12,7 @@ const sunoPromptSystemPrompt = `You are an expert at crafting Suno AI music gene
 Your task is to create an optimized "Style of Music" prompt for Suno AI's Custom Mode.
 
 Rules:
+- The stylePrompt MUST be under 1,000 characters (Suno's hard limit for the Style of Music field)
 - Keep the final stylePrompt concise but information-dense
 - Use comma-separated descriptive tags
 - Prioritize the most important musical information first
