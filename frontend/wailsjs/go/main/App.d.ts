@@ -26,9 +26,13 @@ export function GetShortHWID():Promise<string>;
 
 export function HasAPIKey():Promise<boolean>;
 
+export function MkdirAll(arg1:string):Promise<void>;
+
 export function SaveConfig(arg1:string,arg2:string):Promise<void>;
 
 export function SaveFileDialog(arg1:string):Promise<string>;
+
+export function SelectDirectoryDialog():Promise<string>;
 
 export function ValidateAPIKey(arg1:string,arg2:string):Promise<void>;
 

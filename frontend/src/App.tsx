@@ -15,6 +15,7 @@ import LyricsView from "./components/LyricsView";
 import SunoPromptView from "./components/SunoPromptView";
 import ImagePromptView from "./components/ImagePromptView";
 import LicenseGate from "./components/LicenseGate";
+import AutoGenerateModal from "./components/AutoGenerateModal";
 import {
   HasAPIKey,
   ExpandConcept,
@@ -72,6 +73,8 @@ function App() {
   const [imagePrompt, setImagePrompt] = useState<ImagePromptResult | null>(
     null,
   );
+
+  const [autoModalOpen, setAutoModalOpen] = useState(false);
 
   const [loadingConcept, setLoadingConcept] = useState(false);
   const [loadingSetlist, setLoadingSetlist] = useState(false);
@@ -220,6 +223,19 @@ function App() {
     }
   }, [input, concept, tracks, lyricsMap, sunoPrompts, imagePrompt]);
 
+  const handleAutoComplete = useCallback(
+    (
+      newLyrics: Map<number, LyricsResult>,
+      newSuno: Map<number, SunoPromptResult>,
+      newImage: ImagePromptResult,
+    ) => {
+      setLyricsMap(newLyrics);
+      setSunoPrompts(newSuno);
+      setImagePrompt(newImage);
+    },
+    [],
+  );
+
   // --- Edit handlers ---
 
   const handleLyricsChange = useCallback(
@@ -367,6 +383,14 @@ function App() {
             </span>
           )}
           <button
+            onClick={() => setAutoModalOpen(true)}
+            disabled={tracks.length === 0 || !concept || isAnyLoading}
+            className="px-3 py-1.5 rounded-lg text-xs font-medium bg-accent text-white hover:bg-accent-hover disabled:opacity-30 transition-colors"
+            title="전체 자동 생성 + 내보내기"
+          >
+            자동 생성
+          </button>
+          <button
             onClick={handleExportAll}
             disabled={tracks.length === 0}
             className="p-2 rounded-lg text-text-muted hover:text-text-primary hover:bg-bg-hover disabled:opacity-30 transition-colors"
@@ -502,6 +526,16 @@ function App() {
         }}
         onLicenseActivated={setLicenseStatus}
       />
+
+      {concept && tracks.length > 0 && (
+        <AutoGenerateModal
+          open={autoModalOpen}
+          onClose={() => setAutoModalOpen(false)}
+          concept={concept}
+          tracks={tracks}
+          onComplete={handleAutoComplete}
+        />
+      )}
     </div>
   );
 }

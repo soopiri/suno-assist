@@ -46,12 +46,20 @@ export function HasAPIKey() {
   return window['go']['main']['App']['HasAPIKey']();
 }
 
+export function MkdirAll(arg1) {
+  return window['go']['main']['App']['MkdirAll'](arg1);
+}
+
 export function SaveConfig(arg1, arg2) {
   return window['go']['main']['App']['SaveConfig'](arg1, arg2);
 }
 
 export function SaveFileDialog(arg1) {
   return window['go']['main']['App']['SaveFileDialog'](arg1);
+}
+
+export function SelectDirectoryDialog() {
+  return window['go']['main']['App']['SelectDirectoryDialog']();
 }
 
 export function ValidateAPIKey(arg1, arg2) {

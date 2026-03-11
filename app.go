@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"os"
 
 	"suno-assist/internal/config"
 	"suno-assist/internal/generator"
@@ -111,6 +112,16 @@ func (a *App) SaveFileDialog(defaultFilename string) (string, error) {
 
 func (a *App) WriteFile(path string, content string) error {
 	return writeFile(path, content)
+}
+
+func (a *App) SelectDirectoryDialog() (string, error) {
+	return wailsRuntime.OpenDirectoryDialog(a.ctx, wailsRuntime.OpenDialogOptions{
+		Title: "저장할 폴더를 선택하세요",
+	})
+}
+
+func (a *App) MkdirAll(path string) error {
+	return os.MkdirAll(path, 0755)
 }
 
 // --- License ---
