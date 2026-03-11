@@ -22,7 +22,7 @@ export default function ConceptResult({ concept, loading, onChange }: Props) {
 
   if (!concept) return null;
 
-  const conceptText = `${concept.title}\n장르: ${concept.genre}\n분위기: ${concept.mood}\n\n${concept.description}`;
+  const conceptText = `${concept.title}\n장르: ${concept.genre}\n바이브: ${concept.vibe}\n\n${concept.description}`;
 
   const update = (field: keyof AlbumConcept, value: string) => {
     onChange({ ...concept, [field]: value });
@@ -48,10 +48,10 @@ export default function ConceptResult({ concept, loading, onChange }: Props) {
           />
         </div>
         <div className="flex items-center gap-2">
-          <span className="text-text-muted shrink-0 w-10">분위기</span>
+          <span className="text-text-muted shrink-0 w-10">바이브</span>
           <input
-            value={concept.mood}
-            onChange={(e) => update("mood", e.target.value)}
+            value={concept.vibe}
+            onChange={(e) => update("vibe", e.target.value)}
             className="flex-1 text-text-primary bg-transparent border-b border-transparent hover:border-border focus:border-border-focus outline-none transition-colors py-0.5"
           />
         </div>

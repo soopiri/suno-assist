@@ -22,7 +22,7 @@ Response format:
       "number": 1,
       "title": "Track Title",
       "genre": "specific sub-genre",
-      "mood": "mood/emotion",
+      "vibe": "concise aesthetic or vibe keywords",
       "bpm": "120",
       "key": "C minor",
       "notes": "brief description of the track's role in the album"
@@ -35,14 +35,14 @@ func GenerateSetlist(ctx context.Context, client *openai.Client, concept AlbumCo
 
 Album Title: %s
 Main Genre: %s
-Overall Mood: %s
+Overall Vibe: %s
 Number of Tracks: %d
 Description: %s
 Lyrics Language: %s
 
 Design the tracklist so it tells a story or maintains a thematic arc across the album.
 Consider pacing - mix energetic and calm tracks for good flow.`,
-		concept.Title, concept.Genre, concept.Mood, concept.TrackCount, concept.Description, concept.Language)
+		concept.Title, concept.Genre, concept.Vibe, concept.TrackCount, concept.Description, concept.Language)
 
 	resp, err := client.ChatCompletion(ctx, setlistSystemPrompt, userPrompt)
 	if err != nil {

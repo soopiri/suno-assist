@@ -12,10 +12,10 @@ const sunoPromptSystemPrompt = `You are an expert at crafting Suno AI music gene
 Your task is to create an optimized "Style of Music" prompt for Suno AI's Custom Mode.
 
 Rules for Suno AI Style prompts:
-- Keep it concise: 1-2 genres max, 1 mood/energy line, 2-4 priority instruments
+- Keep it concise: 1-2 genres max, 1 vibe/energy line, 2-4 priority instruments
 - Use comma-separated descriptive tags
 - Don't overload with too many descriptors - this reduces quality
-- Format: genre tags, mood, instruments
+- Format: genre tags, vibe, instruments
 - NEVER include any voice/vocal descriptions (e.g. "male vocal", "female voice", "breathy tenor") - the user will set a Suno Persona separately
 
 IMPORTANT: Respond ONLY with valid JSON. No markdown, no code fences, no explanation.
@@ -34,7 +34,7 @@ func GenerateSunoPrompt(ctx context.Context, client *openai.Client, concept Albu
 Album: %s
 Track #%d: "%s"
 Genre: %s
-Mood: %s
+Vibe: %s
 BPM: %s
 Key: %s
 
@@ -45,7 +45,7 @@ Generate:
 1. A "Style of Music" prompt optimized for Suno AI Custom Mode (NO voice/vocal descriptions - persona is set separately)
 2. Any metatags to prepend to the lyrics (e.g., [BPM: 120]) - do NOT include voice or vocal direction tags`,
 		concept.Title, track.Number, track.Title,
-		track.Genre, track.Mood, track.BPM, track.Key,
+		track.Genre, track.Vibe, track.BPM, track.Key,
 		lyrics)
 
 	resp, err := client.ChatCompletion(ctx, sunoPromptSystemPrompt, userPrompt)

@@ -15,7 +15,7 @@ Available tags: [Intro], [Verse], [Verse 1], [Verse 2], [Pre-Chorus], [Chorus], 
 Guidelines:
 - Use appropriate section tags for the genre
 - Keep lyrics natural and emotionally resonant
-- Match the mood and theme specified
+- Match the vibe and theme specified
 - Write in the specified language
 - Each section should have 2-6 lines
 - Include dynamic variation between sections
@@ -28,7 +28,7 @@ func GenerateLyrics(ctx context.Context, client *openai.Client, concept AlbumCon
 Album: %s
 Track #%d: "%s"
 Genre: %s
-Mood: %s
+Vibe: %s
 BPM: %s
 Key: %s
 Track Notes: %s
@@ -38,7 +38,7 @@ Lyrics Language: %s
 
 Write complete lyrics with Suno AI section tags.`,
 		concept.Title, track.Number, track.Title,
-		track.Genre, track.Mood, track.BPM, track.Key, track.Notes,
+		track.Genre, track.Vibe, track.BPM, track.Key, track.Notes,
 		concept.Description, concept.Language)
 
 	resp, err := client.ChatCompletion(ctx, lyricsSystemPrompt, userPrompt)

@@ -10,7 +10,7 @@ type AlbumConcept struct {
 	Idea        string `json:"idea"`
 	Title       string `json:"title"`
 	Genre       string `json:"genre"`
-	Mood        string `json:"mood"`
+	Vibe        string `json:"vibe"`
 	TrackCount  int    `json:"trackCount"`
 	Description string `json:"description"`
 	Language    string `json:"language"`
@@ -20,7 +20,7 @@ type Track struct {
 	Number int    `json:"number"`
 	Title  string `json:"title"`
 	Genre  string `json:"genre"`
-	Mood   string `json:"mood"`
+	Vibe   string `json:"vibe"`
 	BPM    string `json:"bpm"`
 	Key    string `json:"key"`
 	Notes  string `json:"notes"`

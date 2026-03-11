@@ -8,7 +8,7 @@ export interface AlbumConcept {
   idea: string;
   title: string;
   genre: string;
-  mood: string;
+  vibe: string;
   trackCount: number;
   description: string;
   language: string;
@@ -18,7 +18,7 @@ export interface Track {
   number: number;
   title: string;
   genre: string;
-  mood: string;
+  vibe: string;
   bpm: string;
   key: string;
   notes: string;

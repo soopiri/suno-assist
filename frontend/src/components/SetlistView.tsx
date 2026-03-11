@@ -24,7 +24,7 @@ export default function SetlistView({
   const setlistText = tracks
     .map(
       (t) =>
-        `${t.number}. ${t.title} (${t.genre}, ${t.mood}, ${t.bpm}BPM, ${t.key})`
+        `${t.number}. ${t.title} (${t.genre}, ${t.vibe}, ${t.bpm}BPM, ${t.key})`
     )
     .join("\n");
 
@@ -86,7 +86,7 @@ export default function SetlistView({
                     <div className="flex items-center gap-2 mt-0.5">
                       <span className="text-xs text-accent">{track.genre}</span>
                       <span className="text-xs text-text-muted">·</span>
-                      <span className="text-xs text-text-muted">{track.mood}</span>
+                      <span className="text-xs text-text-muted">{track.vibe}</span>
                       <span className="text-xs text-text-muted">·</span>
                       <span className="text-xs text-text-muted">{track.bpm}BPM</span>
                     </div>

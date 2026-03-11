@@ -23,7 +23,7 @@ export namespace generator {
 	    idea: string;
 	    title: string;
 	    genre: string;
-	    mood: string;
+	    vibe: string;
 	    trackCount: number;
 	    description: string;
 	    language: string;
@@ -37,7 +37,7 @@ export namespace generator {
 	        this.idea = source["idea"];
 	        this.title = source["title"];
 	        this.genre = source["genre"];
-	        this.mood = source["mood"];
+	        this.vibe = source["vibe"];
 	        this.trackCount = source["trackCount"];
 	        this.description = source["description"];
 	        this.language = source["language"];
@@ -91,7 +91,7 @@ export namespace generator {
 	    number: number;
 	    title: string;
 	    genre: string;
-	    mood: string;
+	    vibe: string;
 	    bpm: string;
 	    key: string;
 	    notes: string;
@@ -105,7 +105,7 @@ export namespace generator {
 	        this.number = source["number"];
 	        this.title = source["title"];
 	        this.genre = source["genre"];
-	        this.mood = source["mood"];
+	        this.vibe = source["vibe"];
 	        this.bpm = source["bpm"];
 	        this.key = source["key"];
 	        this.notes = source["notes"];
